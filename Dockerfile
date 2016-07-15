@@ -9,8 +9,6 @@ RUN mkdir /scripts \
 ADD scripts/* /scripts/
 RUN chmod +x /scripts/*
 
-VOLUME ["/var/run/docker.sock"]
-
 WORKDIR /scripts
 
 ENTRYPOINT ["/scripts/entry.sh"]

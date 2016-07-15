@@ -3,6 +3,7 @@ FROM python:2-alpine
 RUN mkdir /scripts \
  && apk update \
  && apk add docker \
+ && apk add curl \
  && pip install awscli \
  && pip install https://s3.amazonaws.com/cloudformation-examples/aws-cfn-bootstrap-latest.tar.gz
 

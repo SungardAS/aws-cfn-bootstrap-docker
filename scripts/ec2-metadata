@@ -1,4 +1,0 @@
-#!/bin/ash
-
-bash -c "/usr/local/bin/ec2-metadata.bash $@"
-

@@ -1,8 +1,10 @@
-FROM python:2-alpine
+FROM docker:1.11
+
 
 RUN mkdir /scripts \
  && apk update \
- && apk add docker \
+ && apk add python \
+ && apk add py-pip \
  && apk add curl \
  && apk add bash \
  && pip install awscli \

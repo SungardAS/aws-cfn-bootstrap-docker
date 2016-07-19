@@ -13,7 +13,7 @@ RUN mkdir /scripts \
 ADD http://s3.amazonaws.com/ec2metadata/ec2-metadata /usr/local/bin/ec2-metadata
 RUN chmod 755 /usr/local/bin/ec2-metadata
 
-ADD ../scripts/* /scripts/
+ADD /scripts/* /scripts/
 RUN chmod +x /scripts/*
 
 RUN mv /scripts/ec2-metadata-value /usr/local/bin/ec2-metadata-value

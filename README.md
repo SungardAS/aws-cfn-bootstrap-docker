@@ -1,12 +1,13 @@
-# docker-aws-cfn-bootstrap
+# aws-cfn-bootstrap
 
 Bootstrap AWS ec2 with CloudFormation and Docker
+
+[GitHub][github-url] | [DockerHub][dockerhub-url]
 
 ## Summary
 
 The host is requried to have docker installed.  This can be done
-with `UserData` either through a `cloud-init` definition or a shell
-script.
+with `UserData` either through `cloud-init` or a shell script.
 
 Once docker is available this image can be run with:
 
@@ -21,18 +22,20 @@ CloudFormation Metadata and is able to respond to a `CreationPolicy` or
 
 Useful for implementations that only run Docker containers and for
 minimal operating systems like
-[rancheros](https://github.com/rancher/os)
+[rancheros][rancheros-url]
 
-In CloudFormation metadata all commands can be calls to docker.  All
-images will be pulled and run by the host docker engine.
+`AWS::CloudFormation::Init` can contain run `docker` which is linked
+to the host. Images will be pulled and run by the host docker engine.
 
 ## Docker Version
 
 This project creates tags for different versions of docker.  Use a tag
 that matches the version of docker the host is running.
 
+    sungardas/aws-cfn-bootstrap:1.9
     sungardas/aws-cfn-bootstrap:1.10
     sungardas/aws-cfn-bootstrap:1.11
+    sungardas/aws-cfn-bootstrap:1.12
 
 
 ## Available Commands
@@ -83,3 +86,6 @@ Blog:
 [cfn-bootstrap-url]: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-helper-scripts-reference.html
 [query-tool-url]: https://aws.amazon.com/code/1825
 [aws-cli-url]: https://aws.amazon.com/cli/
+[github-url]: https://github.com/SungardAS/aws-cfn-bootstrap-docker
+[dockerhub-url]: https://hub.docker.com/r/sungardas/aws-cfn-bootstrap
+[rancheros-url]: https://github.com/rancher/os
